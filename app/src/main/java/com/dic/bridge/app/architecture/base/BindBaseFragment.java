@@ -24,7 +24,7 @@ public abstract class BindBaseFragment extends BaseFragment implements BindWrapp
 
     @Override
     protected void onFragmentViewCreated(View view, Bundle savedInstanceState) {
-        onBind(view);
+        onBind();
     }
 
     @Override
@@ -34,9 +34,12 @@ public abstract class BindBaseFragment extends BaseFragment implements BindWrapp
     }
 
     @Override
-    public void onBind(View target) {
-        unbinder = ButterKnife.bind(target);
+    public void onBind() {
+        unbinder = ButterKnife.bind(getView());
     }
+
+
+
 
     @Override
     public void onUnbind() {

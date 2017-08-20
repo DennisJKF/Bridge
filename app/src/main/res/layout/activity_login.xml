@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.bridge.app.architecture.com.dic.bridge.app.architecture.ui.activity.LoginActivity">
+    tools:context="com.dic.bridge.app.architecture.ui.activity.LoginActivity">
 
     <include layout="@layout/toolbar"/>
 

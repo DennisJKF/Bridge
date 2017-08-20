@@ -23,7 +23,7 @@ android {
 
     greendao {
         schemaVersion 1
-        daoPackage "com.jeanboy.data.cache.database.dao"
+        daoPackage "com.dic.bridge.data.cache.database.dao"
         targetGenDir "src/main/java"
     }
 }

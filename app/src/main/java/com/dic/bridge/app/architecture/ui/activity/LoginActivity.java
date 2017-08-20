@@ -43,6 +43,7 @@ public class LoginActivity extends BindBaseActivity implements LoginContract.Vie
 
     @Override
     protected void onSetContentView() {
+        super.onSetContentView();
         loginPresenter = new LoginPresenter();
         loginPresenter.setView(this);
         userPresenter = new UserPresenter();
@@ -59,6 +60,7 @@ public class LoginActivity extends BindBaseActivity implements LoginContract.Vie
     protected void initData() {
 
     }
+
 
     @Override
     protected void onDestroy() {
