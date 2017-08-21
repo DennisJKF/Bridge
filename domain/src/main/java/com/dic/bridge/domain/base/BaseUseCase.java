@@ -1,7 +1,7 @@
 package com.dic.bridge.domain.base;
 
 /**
- * Created by jeanboy on 2017/3/10.
+ * Created by dennis.jiang on 2017/3/10.
  */
 
 public abstract class BaseUseCase<Q extends BaseUseCase.RequestValues, P extends BaseUseCase.ResponseValues> {

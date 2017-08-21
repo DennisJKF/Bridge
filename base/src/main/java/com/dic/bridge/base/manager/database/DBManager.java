@@ -8,7 +8,7 @@ import android.os.Looper;
 import java.util.List;
 
 /**
- * Created by jeanboy on 2016/12/9.
+ * Created by dennis.jiang on 2016/12/9.
  */
 
 public class DBManager {

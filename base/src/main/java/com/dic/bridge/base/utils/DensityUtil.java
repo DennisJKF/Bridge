@@ -3,7 +3,7 @@ package com.dic.bridge.base.utils;
 import android.content.Context;
 
 /**
- * Created by jeanboy on 2016/7/8.
+ * Created by dennis.jiang on 2016/7/8.
  */
 public class DensityUtil {
 

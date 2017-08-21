@@ -2,7 +2,7 @@ package com.dic.bridge.data.net.manager;
 
 import android.annotation.SuppressLint;
 
-import com.bridge.base.BuildConfig;
+import com.dic.bridge.base.BuildConfig;
 import com.dic.bridge.base.manager.net.NetManager;
 import com.dic.bridge.base.manager.net.RequestCallback;
 import com.dic.bridge.base.manager.net.RequestParams;
@@ -15,11 +15,12 @@ import okhttp3.logging.HttpLoggingInterceptor;
 import retrofit2.Call;
 import retrofit2.Converter;
 import retrofit2.Retrofit;
+import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory;
 import retrofit2.converter.gson.GsonConverterFactory;
 import retrofit2.converter.simplexml.SimpleXmlConverterFactory;
 
 /**
- * Created by jeanboy on 2017/5/17.
+ * Created by dennis.jiang on 2017/5/17.
  */
 
 public class OkHttpManager extends NetManager {
@@ -71,7 +72,11 @@ public class OkHttpManager extends NetManager {
         if (mOkHttpClient == null) {
             mOkHttpClient = getOkHttpClient();
         }
-        mRetrofit = new Retrofit.Builder().baseUrl(baseUrl).addConverterFactory(factory).client(mOkHttpClient).build();
+        mRetrofit = new Retrofit.Builder()
+                .baseUrl(baseUrl)
+                .addConverterFactory(factory)
+                .addCallAdapterFactory(RxJava2CallAdapterFactory.create())//Rxjava
+                .client(mOkHttpClient).build();
         return mRetrofit;
     }
 

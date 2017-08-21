@@ -25,9 +25,9 @@
 #-renamesourcefileattribute SourceFile
 ##--------------------------------------data 配置---------------------------------------------------
 # model
--keep class com.jeanboy.data.cache.database.model.** { *; }
--keep class com.jeanboy.data.net.entity.** { *; }
--keep class com.jeanboy.data.net.mapper.** { *; }
+-keep class com.dic.bridge.data.cache.database.model.** { *; }
+-keep class com.dic.bridge.data.net.entity.** { *; }
+-keep class com.dic.bridge.data.net.mapper.** { *; }
 
 ##--------------------------------------data 配置---------------------------------------------------
 

@@ -11,7 +11,7 @@ import java.util.Locale;
 import java.util.TimeZone;
 
 /**
- * Created by jeanboy on 2017/5/19.
+ * Created by dennis.jiang on 2017/5/19.
  */
 
 public class DateUtil {

@@ -1,7 +1,7 @@
 package com.dic.bridge.base.manager.net;
 
 /**
- * Created by jeanboy on 2017/2/10.
+ * Created by dennis.jiang on 2017/2/10.
  */
 
 public interface NetHandler<P, B> {

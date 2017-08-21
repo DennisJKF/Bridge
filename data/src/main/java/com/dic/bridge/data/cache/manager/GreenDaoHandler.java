@@ -11,7 +11,7 @@ import org.greenrobot.greendao.query.QueryBuilder;
 import java.util.List;
 
 /**
- * Created by jeanboy on 2017/7/31.
+ * Created by dennis.jiang on 2017/7/31.
  */
 
 public class GreenDaoHandler implements DBHandler {

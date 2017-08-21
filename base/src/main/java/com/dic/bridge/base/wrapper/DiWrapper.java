@@ -1,7 +1,7 @@
 package com.dic.bridge.base.wrapper;
 
 /**
- * Created by jeanboy on 2017/8/2.
+ * Created by dennis.jiang on 2017/8/2.
  * <p>
  * 用于初始化dagger
  */

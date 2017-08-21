@@ -9,7 +9,7 @@ import android.provider.MediaStore;
 import java.io.File;
 
 /**
- * Created by jeanboy on 2016/7/8.
+ * Created by dennis.jiang on 2016/7/8.
  */
 public class PhoneUtil {
 

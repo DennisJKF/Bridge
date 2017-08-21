@@ -6,7 +6,7 @@ import android.content.res.Resources;
 import java.lang.reflect.Method;
 
 /**
- * Created by jeanboy on 2016/10/31.
+ * Created by dennis.jiang on 2016/10/31.
  */
 
 public class NavigationBarUtil {

@@ -7,11 +7,10 @@ import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 
-import com.bridge.base.R;
 import com.dic.bridge.base.utils.ToolBarUtil;
 
 /**
- * Created by jeanboy on 2017/7/27.
+ * Created by dennis.jiang on 2017/7/27.
  */
 
 public abstract class BaseActivity extends AppCompatActivity {

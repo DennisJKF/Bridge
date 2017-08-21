@@ -5,13 +5,13 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 
-import com.bridge.app.architecture.R;
-import com.dic.bridge.app.architecture.base.BindBaseFragment;
+import com.dic.bridge.app.architecture.R;
+import com.dic.bridge.app.architecture.di.DaggerBaseFragment;
 
 /**
- * created by jeanboy on 2017/8/3 14:14
+ * created by dennis.jiang on 2017/8/3 14:14
  */
-public class SimpleFragment extends BindBaseFragment {
+public class SimpleFragment extends DaggerBaseFragment {
 
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
@@ -31,6 +31,11 @@ public class SimpleFragment extends BindBaseFragment {
         args.putString(ARG_PARAM2, param2);
         fragment.setArguments(args);
         return fragment;
+    }
+
+    @Override
+    public void onInject() {
+        getFragmentComponent().inject(this);
     }
 
     @Override

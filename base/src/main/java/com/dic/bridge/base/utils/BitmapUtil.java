@@ -8,7 +8,7 @@ import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 
 /**
- * Created by jeanboy on 2016/7/8.
+ * Created by dennis.jiang on 2016/7/8.
  */
 public class BitmapUtil {
 

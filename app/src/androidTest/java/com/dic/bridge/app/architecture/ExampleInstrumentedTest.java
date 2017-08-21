@@ -21,6 +21,6 @@ public class ExampleInstrumentedTest {
         // Context of the app under test.
         Context appContext = InstrumentationRegistry.getTargetContext();
 
-        assertEquals("com.jeanboy.app.architecture", appContext.getPackageName());
+        assertEquals("com.dic.bridge.app.architecture", appContext.getPackageName());
     }
 }

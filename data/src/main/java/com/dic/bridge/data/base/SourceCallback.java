@@ -1,7 +1,7 @@
 package com.dic.bridge.data.base;
 
 /**
- * Created by jeanboy on 2017/3/9.
+ * Created by dennis.jiang on 2017/3/9.
  */
 
 public interface SourceCallback<T> {

@@ -9,7 +9,7 @@ import java.io.UnsupportedEncodingException;
 import java.util.UUID;
 
 /**
- * Created by jeanboy on 2017/5/17.
+ * Created by dennis.jiang on 2017/5/17.
  */
 
 public class DeviceIdUtil {

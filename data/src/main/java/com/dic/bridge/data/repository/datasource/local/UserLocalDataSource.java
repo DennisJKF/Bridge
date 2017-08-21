@@ -11,13 +11,19 @@ import org.greenrobot.greendao.query.QueryBuilder;
 
 import java.util.List;
 
+import javax.inject.Inject;
+
 /**
- * Created by jeanboy on 2017/7/27.
+ * Created by dennis.jiang on 2017/7/27.
  */
 
 public class UserLocalDataSource implements UserDataSource.Local {
 
     private static UserLocalDataSource INSTANCE;
+
+    @Inject
+    public UserLocalDataSource() {
+    }
 
     public static UserLocalDataSource getInstance() {
         if (INSTANCE == null) {

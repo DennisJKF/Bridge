@@ -1,7 +1,7 @@
 package com.dic.bridge.data.cache.database.model;
 
 /**
- * Created by jeanboy on 2017/7/28.
+ * Created by dennis.jiang on 2017/7/28.
  */
 
 public class TokenModel {

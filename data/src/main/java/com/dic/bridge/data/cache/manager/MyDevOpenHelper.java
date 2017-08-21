@@ -10,7 +10,7 @@ import com.dic.bridge.data.cache.database.dao.UserModelDao;
 import org.greenrobot.greendao.database.Database;
 
 /**
- * Created by jeanboy on 2017/5/22.
+ * Created by dennis.jiang on 2017/5/22.
  */
 
 public class MyDevOpenHelper extends DaoMaster.DevOpenHelper {

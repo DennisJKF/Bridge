@@ -3,7 +3,7 @@ package com.dic.bridge.base.manager.net;
 import android.annotation.SuppressLint;
 
 /**
- * Created by jeanboy on 2017/2/10.
+ * Created by dennis.jiang on 2017/2/10.
  */
 
 public class NetManager {

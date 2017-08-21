@@ -10,7 +10,7 @@ import butterknife.ButterKnife;
 import butterknife.Unbinder;
 
 /**
- * Created by jeanboy on 2017/8/3.
+ * Created by dennis.jiang on 2017/8/3.
  */
 
 public abstract class BindBaseFragment extends BaseFragment implements BindWrapper {
@@ -19,12 +19,12 @@ public abstract class BindBaseFragment extends BaseFragment implements BindWrapp
 
     @Override
     protected void onFragmentCreate() {
-
+        // TODO: 2017/8/3 nothing
     }
 
     @Override
     protected void onFragmentViewCreated(View view, Bundle savedInstanceState) {
-        onBind();
+        onBind(view);
     }
 
     @Override
@@ -34,12 +34,9 @@ public abstract class BindBaseFragment extends BaseFragment implements BindWrapp
     }
 
     @Override
-    public void onBind() {
-        unbinder = ButterKnife.bind(getView());
+    public void onBind(Object target) {
+        unbinder = ButterKnife.bind((View) target);
     }
-
-
-
 
     @Override
     public void onUnbind() {

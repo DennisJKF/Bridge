@@ -4,7 +4,7 @@ import android.support.design.widget.Snackbar;
 import android.view.View;
 
 /**
- * Created by jeanboy on 2017/5/23.
+ * Created by dennis.jiang on 2017/5/23.
  */
 
 public class SnackbarUtil {

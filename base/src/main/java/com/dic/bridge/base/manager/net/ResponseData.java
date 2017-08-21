@@ -3,7 +3,7 @@ package com.dic.bridge.base.manager.net;
 import java.util.Map;
 
 /**
- * Created by jeanboy on 2017/5/17.
+ * Created by dennis.jiang on 2017/5/17.
  */
 
 public class ResponseData<B> {

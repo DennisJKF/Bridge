@@ -1,7 +1,5 @@
 package com.dic.bridge.data.repository;
 
-import com.dic.bridge.base.manager.net.RequestCallback;
-import com.dic.bridge.base.manager.net.ResponseData;
 import com.dic.bridge.data.base.BaseRepository;
 import com.dic.bridge.data.base.SourceCallback;
 import com.dic.bridge.data.cache.database.model.UserModel;
@@ -15,10 +13,16 @@ import com.dic.bridge.data.repository.datasource.remote.UserRemoteDataSource;
 import java.util.List;
 import java.util.Map;
 
-import retrofit2.Call;
+import javax.inject.Inject;
+
+import io.reactivex.Flowable;
+import io.reactivex.android.schedulers.AndroidSchedulers;
+import io.reactivex.annotations.NonNull;
+import io.reactivex.functions.Consumer;
+import io.reactivex.schedulers.Schedulers;
 
 /**
- * Created by jeanboy on 2017/7/27.
+ * Created by dennis.jiang on 2017/7/27.
  */
 
 public class UserRepository extends BaseRepository implements UserDataSource.Local, UserDataSource.Remote {
@@ -30,6 +34,7 @@ public class UserRepository extends BaseRepository implements UserDataSource.Loc
     private final UserLocalDataSource localDataSource;
     private final UserRemoteDataSource remoteDataSource;
 
+    @Inject
     public UserRepository(UserLocalDataSource localDataSource, UserRemoteDataSource remoteDataSource) {
         this.localDataSource = localDataSource;
         this.remoteDataSource = remoteDataSource;
@@ -83,19 +88,18 @@ public class UserRepository extends BaseRepository implements UserDataSource.Loc
     }
 
     @Override
-    public Call<TokenEntity> login(String username, String password, RequestCallback<ResponseData<TokenEntity>> callback) {
-        return remoteDataSource.login(username, password, callback);
+    public Flowable<TokenEntity> login(String username, String password) {
+        return remoteDataSource.login(username, password);
     }
 
     @Override
-    public Call<UserEntity> getInfo(String accessToken, String userId, RequestCallback<ResponseData<UserEntity>> callback) {
-        return remoteDataSource.getInfo(accessToken, userId, callback);
+    public Flowable<UserEntity> getInfo(String accessToken, String userId) {
+        return remoteDataSource.getInfo(accessToken, userId);
     }
 
     @Override
-    public Call<List<UserEntity>> getFriendList(String accessToken, String userId, int skip, int limit, RequestCallback<ResponseData<List
-            <UserEntity>>> callback) {
-        return remoteDataSource.getFriendList(accessToken, userId, skip, limit, callback);
+    public Flowable<List<UserEntity>> getFriendList(String accessToken, String userId, int skip, int limit) {
+        return remoteDataSource.getFriendList(accessToken, userId, skip, limit);
     }
 
     /**
@@ -133,23 +137,25 @@ public class UserRepository extends BaseRepository implements UserDataSource.Loc
     }
 
     private void getFromRemote(String userId, final SourceCallback<UserModel> callback) {
-        getInfo("", userId, new RequestCallback<ResponseData<UserEntity>>() {
-            @Override
-            public void onSuccess(ResponseData<UserEntity> response) {
-                UserEntity body = response.getBody();
-                if (body == null) return;
-                // TODO: 2017/7/28 mapper数据转换层
-                UserModel userModel = new UserDataMapper().transform(body);
-                // TODO: 2017/8/3 缓存数据
-                refreshLocalData(userModel);
-                callback.onLoaded(userModel);
-            }
-
-            @Override
-            public void onError(int code, String msg) {
-                callback.onDataNotAvailable();
-            }
-        });
+        getInfo("", userId)
+                .subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(new Consumer<UserEntity>() {
+                    @Override
+                    public void accept(@NonNull UserEntity body) throws Exception {
+                        if (body == null) return;
+                        // TODO: 2017/7/28 mapper数据转换层
+                        UserModel userModel = new UserDataMapper().transform(body);
+                        // TODO: 2017/8/3 缓存数据
+                        refreshLocalData(userModel);
+                        callback.onLoaded(userModel);
+                    }
+                }, new Consumer<Throwable>() {
+                    @Override
+                    public void accept(@NonNull Throwable throwable) throws Exception {
+                        callback.onDataNotAvailable();
+                    }
+                });
     }
 
     private void refreshLocalData(final UserModel userModel) {

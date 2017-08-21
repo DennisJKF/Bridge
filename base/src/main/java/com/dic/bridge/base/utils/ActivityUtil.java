@@ -9,7 +9,7 @@ import android.support.v4.util.Pair;
 import android.view.View;
 
 /**
- * Created by jeanboy on 2017/5/26.
+ * Created by dennis.jiang on 2017/5/26.
  */
 
 public class ActivityUtil {

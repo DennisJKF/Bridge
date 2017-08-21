@@ -3,11 +3,16 @@ package com.dic.bridge.app.architecture.ui.activity;
 import android.os.Bundle;
 import android.view.View;
 
-import com.bridge.app.architecture.R;
-import com.dic.bridge.app.architecture.base.BindBaseActivity;
+import com.dic.bridge.app.architecture.R;
+import com.dic.bridge.app.architecture.di.DaggerBaseActivity;
 import com.dic.bridge.base.utils.ToolBarUtil;
 
-public class MainActivity extends BindBaseActivity {
+public class MainActivity extends DaggerBaseActivity {
+
+    @Override
+    public void onInject() {
+        getActivityComponent().inject(this);
+    }
 
     @Override
     protected int getLayoutId() {

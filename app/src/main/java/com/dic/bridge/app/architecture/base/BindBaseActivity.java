@@ -1,5 +1,7 @@
 package com.dic.bridge.app.architecture.base;
 
+import android.app.Activity;
+
 import com.dic.bridge.base.BaseActivity;
 import com.dic.bridge.base.wrapper.BindWrapper;
 
@@ -7,7 +9,7 @@ import butterknife.ButterKnife;
 import butterknife.Unbinder;
 
 /**
- * Created by jeanboy on 2017/8/3.
+ * Created by dennis.jiang on 2017/8/3.
  */
 
 public abstract class BindBaseActivity extends BaseActivity implements BindWrapper {
@@ -16,7 +18,7 @@ public abstract class BindBaseActivity extends BaseActivity implements BindWrapp
 
     @Override
     protected void onSetContentView() {
-        onBind();
+        onBind(this);
     }
 
     @Override
@@ -26,8 +28,8 @@ public abstract class BindBaseActivity extends BaseActivity implements BindWrapp
     }
 
     @Override
-    public void onBind() {
-        unbinder = ButterKnife.bind(this);
+    public void onBind(Object target) {
+        unbinder = ButterKnife.bind((Activity) target);
     }
 
     @Override

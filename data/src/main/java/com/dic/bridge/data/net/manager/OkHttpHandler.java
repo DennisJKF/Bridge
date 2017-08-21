@@ -18,7 +18,7 @@ import retrofit2.Callback;
 import retrofit2.Response;
 
 /**
- * Created by jeanboy on 2017/2/10.
+ * Created by dennis.jiang on 2017/2/10.
  */
 
 public class OkHttpHandler<T> implements NetHandler<Call<T>, T> {

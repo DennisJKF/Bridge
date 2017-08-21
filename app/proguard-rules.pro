@@ -25,7 +25,7 @@
 #-renamesourcefileattribute SourceFile
 ##--------------------------------------App 配置---------------------------------------------------
 # R 文件
--keep public class com.jeanboy.app.architecture.R$*{
+-keep public class com.dic.bridge.app.architecture.R$*{
 		public static final int *;
 }
 

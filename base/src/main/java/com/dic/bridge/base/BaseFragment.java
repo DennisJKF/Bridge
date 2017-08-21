@@ -9,10 +9,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.bridge.base.R;
-
 /**
- * Created by jeanboy on 2017/7/27.
+ * Created by dennis.jiang on 2017/7/27.
  */
 
 public abstract class BaseFragment extends Fragment {

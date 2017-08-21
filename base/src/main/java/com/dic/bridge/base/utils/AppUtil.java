@@ -12,7 +12,7 @@ import java.io.File;
 import java.util.List;
 
 /**
- * Created by jeanboy on 2016/7/4.
+ * Created by dennis.jiang on 2016/7/4.
  */
 public class AppUtil {
 

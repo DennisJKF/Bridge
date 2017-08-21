@@ -3,15 +3,22 @@ package com.dic.bridge.domain.features.login;
 import com.dic.bridge.domain.base.BaseUseCase;
 import com.dic.bridge.domain.usecase.LoginRemoteTask;
 
+import javax.inject.Inject;
+
 /**
- * Created by jeanboy on 2017/7/28.
+ * Created by dennis.jiang on 2017/7/28.
  */
 
 public class LoginPresenter implements LoginContract.Presenter {
 
     private LoginContract.View view;
 
-    private LoginRemoteTask task = new LoginRemoteTask();
+    @Inject
+    LoginRemoteTask task;
+
+    @Inject
+    public LoginPresenter() {
+    }
 
     @Override
     public void setView(LoginContract.View view) {

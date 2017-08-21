@@ -8,7 +8,7 @@ import com.dic.bridge.base.adapter.recyclerview.RecyclerBaseAdapter;
 import java.util.List;
 
 /**
- * Created by jeanboy on 2017/8/3.
+ * Created by dennis.jiang on 2017/8/3.
  */
 
 public class SimpleAdapter extends RecyclerBaseAdapter<String> {

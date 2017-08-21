@@ -4,7 +4,7 @@ import com.dic.bridge.data.cache.database.model.TokenModel;
 import com.dic.bridge.domain.base.BasePresenter;
 
 /**
- * Created by jeanboy on 2017/7/27.
+ * Created by dennis.jiang on 2017/7/27.
  */
 
 public class LoginContract {

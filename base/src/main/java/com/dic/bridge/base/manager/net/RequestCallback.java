@@ -1,7 +1,7 @@
 package com.dic.bridge.base.manager.net;
 
 /**
- * Created by jeanboy on 2016/7/13.
+ * Created by dennis.jiang on 2016/7/13.
  */
 public interface RequestCallback<R> {
 

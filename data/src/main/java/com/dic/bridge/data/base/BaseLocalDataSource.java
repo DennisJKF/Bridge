@@ -4,7 +4,7 @@ package com.dic.bridge.data.base;
 import java.util.List;
 
 /**
- * Created by jeanboy on 2017/3/13.
+ * Created by dennis.jiang on 2017/3/13.
  */
 
 public interface BaseLocalDataSource<T> {

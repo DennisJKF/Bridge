@@ -15,7 +15,7 @@ import java.util.Arrays;
 import java.util.List;
 
 /**
- * Created by jeanboy on 2017/5/22.
+ * Created by dennis.jiang on 2017/5/22.
  */
 
 public class MigrationHelper {
