@@ -1,4 +1,4 @@
-package com.dic.bridge.data.net.dao;
+package com.dic.bridge.data.net.service;
 
 import com.dic.bridge.data.net.entity.TokenEntity;
 import com.dic.bridge.data.net.entity.UserEntity;
@@ -18,7 +18,7 @@ import retrofit2.http.Query;
  * Created by dennis.jiang on 2017/7/27.
  */
 
-public interface UserDao {
+public interface IUserService {
 
     String BASE_URL = "http://www.xxx.com";
 

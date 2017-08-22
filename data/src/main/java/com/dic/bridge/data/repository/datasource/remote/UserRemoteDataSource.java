@@ -2,7 +2,7 @@ package com.dic.bridge.data.repository.datasource.remote;
 
 import com.dic.bridge.data.net.entity.TokenEntity;
 import com.dic.bridge.data.net.entity.UserEntity;
-import com.dic.bridge.data.net.impl.UserDaoImpl;
+import com.dic.bridge.data.net.impl.UserServiceImpl;
 import com.dic.bridge.data.repository.datasource.UserDataSource;
 
 import java.util.List;
@@ -17,7 +17,7 @@ import io.reactivex.Flowable;
 
 public class UserRemoteDataSource implements UserDataSource.Remote {
 
-    private UserDaoImpl userDao = new UserDaoImpl();
+    private UserServiceImpl userDao = new UserServiceImpl();
 
     private static UserRemoteDataSource INSTANCE;
 
