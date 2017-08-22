@@ -17,33 +17,24 @@ import io.reactivex.Flowable;
 
 public class UserRemoteDataSource implements UserDataSource.Remote {
 
-    private UserServiceImpl userDao = new UserServiceImpl();
-
-    private static UserRemoteDataSource INSTANCE;
+    private UserServiceImpl userService = new UserServiceImpl();
 
     @Inject
     public UserRemoteDataSource() {
     }
 
-    public static UserRemoteDataSource getInstance() {
-        if (INSTANCE == null) {
-            INSTANCE = new UserRemoteDataSource();
-        }
-        return INSTANCE;
-    }
-
     @Override
     public Flowable<TokenEntity> login(String username, String password) {
-        return userDao.login(username, password);
+        return userService.login(username, password);
     }
 
     @Override
     public Flowable<UserEntity> getInfo(String accessToken, String userId) {
-        return userDao.getInfo(accessToken, userId);
+        return userService.getInfo(accessToken, userId);
     }
 
     @Override
     public Flowable<List<UserEntity>> getFriendList(String accessToken, String userId, int skip, int limit) {
-        return userDao.getFriendList(accessToken, userId, skip, limit);
+        return userService.getFriendList(accessToken, userId, skip, limit);
     }
 }

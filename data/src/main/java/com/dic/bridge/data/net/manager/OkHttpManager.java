@@ -84,8 +84,12 @@ public class OkHttpManager extends NetManager {
         HttpLoggingInterceptor loggingInterceptor = new HttpLoggingInterceptor();
         loggingInterceptor.setLevel(BuildConfig.DEBUG ? HttpLoggingInterceptor.Level.BASIC : HttpLoggingInterceptor.Level.NONE);
         if (mOkHttpClient == null) {
-            mOkHttpClient = new OkHttpClient.Builder().addInterceptor(loggingInterceptor).retryOnConnectionFailure(true)
-                    .connectTimeout(CONNECT_TIMEOUT, TimeUnit.SECONDS).build();
+            mOkHttpClient = new OkHttpClient.Builder()
+                    .addInterceptor(loggingInterceptor)
+                    .addInterceptor(new TokenInterceptor(TokenManager.getInstance()))
+                    .retryOnConnectionFailure(true)
+                    .connectTimeout(CONNECT_TIMEOUT, TimeUnit.SECONDS)
+                    .build();
         }
         return mOkHttpClient;
     }

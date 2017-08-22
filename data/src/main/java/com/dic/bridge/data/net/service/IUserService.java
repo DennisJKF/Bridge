@@ -20,7 +20,7 @@ import retrofit2.http.Query;
 
 public interface IUserService {
 
-    String BASE_URL = "http://www.xxx.com";
+    String BASE_URL = "http://app.glip.com";
 
     /**
      * http://www.xxx.com

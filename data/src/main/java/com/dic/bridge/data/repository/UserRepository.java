@@ -27,8 +27,6 @@ import io.reactivex.schedulers.Schedulers;
 
 public class UserRepository extends BaseRepository implements UserDataSource.Local, UserDataSource.Remote {
 
-    private static UserRepository INSTANCE = null;
-
     Map<String, UserModel> mCacheMap;//memory cache
 
     private final UserLocalDataSource localDataSource;
@@ -38,18 +36,6 @@ public class UserRepository extends BaseRepository implements UserDataSource.Loc
     public UserRepository(UserLocalDataSource localDataSource, UserRemoteDataSource remoteDataSource) {
         this.localDataSource = localDataSource;
         this.remoteDataSource = remoteDataSource;
-    }
-
-    public static UserRepository getInstance(UserLocalDataSource localDataSource, UserRemoteDataSource
-            remoteDataSource) {
-        if (INSTANCE == null) {
-            INSTANCE = new UserRepository(localDataSource, remoteDataSource);
-        }
-        return INSTANCE;
-    }
-
-    public static void destroyInstance() {
-        INSTANCE = null;
     }
 
     @Override

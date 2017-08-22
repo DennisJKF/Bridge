@@ -2,6 +2,7 @@ package com.dic.bridge.domain.usecase;
 
 import com.dic.bridge.data.cache.database.model.TokenModel;
 import com.dic.bridge.data.net.entity.TokenEntity;
+import com.dic.bridge.data.net.manager.TokenManager;
 import com.dic.bridge.data.net.mapper.TokenDataMapper;
 import com.dic.bridge.data.repository.UserRepository;
 import com.dic.bridge.domain.base.BaseUseCase;
@@ -39,6 +40,7 @@ public class LoginRemoteTask extends BaseUseCase<LoginRemoteTask.RequestValues, 
                         TokenModel tokenModel = new TokenDataMapper().transform(body);
                         if (getUseCaseCallback() == null) return;
                         getUseCaseCallback().onSuccess(new ResponseValues(tokenModel));
+                        TokenManager.getInstance().initToken(tokenModel);
                     }
                 }, new Consumer<Throwable>() {
                     @Override
