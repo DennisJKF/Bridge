@@ -60,7 +60,7 @@ public class OkHttpManager extends NetManager {
 
     /*------------------------配置环境------------------------------*/
 
-    private Retrofit getRetrofitByGson(String baseUrl) {
+    public Retrofit getRetrofitByGson(String baseUrl) {
         return getRetrofit(baseUrl, GsonConverterFactory.create());
     }
 
