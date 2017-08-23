@@ -33,6 +33,7 @@ dependencies {
     compile "com.android.support:recyclerview-v7:$rootProject.supportLibraryVersion"
     compile "com.android.support:support-v4:$rootProject.supportLibraryVersion"
 
+    compile "de.greenrobot:java-common:$rootProject.essentialVersion"
     testCompile "junit:junit:$rootProject.junitVersion"
 
 }

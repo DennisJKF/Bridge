@@ -1,5 +1,6 @@
 package com.dic.bridge.base.utils;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.provider.Settings;
 import android.telephony.TelephonyManager;
@@ -28,7 +29,7 @@ public class DeviceIdUtil {
                 if (!"9774d56d682e549c".equals(androidId)) {
                     uuid = UUID.nameUUIDFromBytes(androidId.getBytes("utf8")).toString();
                 } else {
-                    final String deviceId = ((TelephonyManager) context.getSystemService(Context.TELEPHONY_SERVICE)).getDeviceId();
+                    @SuppressLint("MissingPermission") final String deviceId = ((TelephonyManager) context.getSystemService(Context.TELEPHONY_SERVICE)).getDeviceId();
                     uuid = deviceId != null ? UUID.nameUUIDFromBytes(deviceId.getBytes("utf8")).toString() : UUID.randomUUID().toString();
                 }
             } catch (UnsupportedEncodingException e) {

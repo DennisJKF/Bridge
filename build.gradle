@@ -38,6 +38,7 @@ ext {
 
     glideVersion = '3.7.0'
     daggerVersion = '2.10'
+    essentialVersion = '2.3.1'
 //    eventbusVersion = '3.0.0'
 //    fastjsonVersion = '1.1.56.android'
 //    permissionVersion = '2.3.2'
