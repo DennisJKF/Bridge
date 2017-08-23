@@ -1,0 +1,1 @@
+java -jar moco.jar http -p 12306 -c $1

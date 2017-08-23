@@ -1,0 +1,18 @@
+[
+  {
+    "request" :
+    {
+      "uri" :"/user",
+      "method" :"post"
+    },
+   "response" :
+      {
+        "json" :
+        {
+            "refreshToken" : "a",
+            "accessToken" :"a",
+            "expiresIn" :"10"
+        }
+      }
+  }
+]
