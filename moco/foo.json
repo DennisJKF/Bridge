@@ -1,9 +1,15 @@
 [
   {
+    "description": "Test for login",
     "request" :
     {
       "uri" :"/user",
-      "method" :"post"
+      "method" :"post",
+      "forms" :
+      {
+        "username":"AAA",
+        "password":"BBB"
+      }
     },
    "response" :
       {
