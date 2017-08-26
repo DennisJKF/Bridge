@@ -10,7 +10,7 @@ import com.dic.bridge.app.architecture.di.modules.ApplicationModule;
  * Created by dennis.jiang on 2017/8/2.
  */
 
-public class DaggerApplication extends Application {
+public abstract class DaggerApplication extends Application {
 
     private static DaggerApplication instance;
 

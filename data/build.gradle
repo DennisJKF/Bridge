@@ -26,6 +26,11 @@ android {
         daoPackage "com.dic.bridge.data.cache.database.dao"
         targetGenDir "src/main/java"
     }
+
+    lintOptions {
+        abortOnError true
+        lintConfig rootProject.file("lint.xml")
+    }
 }
 
 configurations {
