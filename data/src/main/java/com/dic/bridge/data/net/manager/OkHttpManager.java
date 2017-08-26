@@ -7,6 +7,7 @@ import com.dic.bridge.base.manager.net.NetManager;
 import com.dic.bridge.base.manager.net.RequestCallback;
 import com.dic.bridge.base.manager.net.RequestParams;
 import com.dic.bridge.base.manager.net.ResponseData;
+import com.facebook.stetho.okhttp3.StethoInterceptor;
 
 import java.util.concurrent.TimeUnit;
 
@@ -86,6 +87,7 @@ public class OkHttpManager extends NetManager {
         if (mOkHttpClient == null) {
             mOkHttpClient = new OkHttpClient.Builder()
                     .addInterceptor(loggingInterceptor)
+                    .addNetworkInterceptor(new StethoInterceptor())
                     .addInterceptor(new TokenInterceptor(TokenManager.getInstance()))
                     .retryOnConnectionFailure(true)
                     .connectTimeout(CONNECT_TIMEOUT, TimeUnit.SECONDS)

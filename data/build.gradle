@@ -40,6 +40,7 @@ ext {
     retrofitVersion = '2.2.0'
     simpleXmlVersion = '2.7.+'
     greendaoVersion = '3.2.0'
+    stethoVersion = '1.5.0'
 }
 
 dependencies {
@@ -75,4 +76,5 @@ dependencies {
     testAnnotationProcessor "com.google.dagger:dagger-compiler:$rootProject.daggerVersion"
     testCompile "com.google.dagger:dagger-compiler:$rootProject.daggerVersion"
     compile "com.squareup.retrofit2:retrofit-mock:$retrofitVersion"
+    compile "com.facebook.stetho:stetho-okhttp3:$stethoVersion"
 }
